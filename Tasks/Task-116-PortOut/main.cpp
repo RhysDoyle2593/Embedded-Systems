@@ -8,12 +8,17 @@ int main()
     lights = 0;
 
     while (true)
-    {
-        lights = 0b0000000000000100;
+    {   
+        // RED+YELLOW 
+        lights = 0b0000000000001100;
         wait_us(1000000);
-        lights = 0b0000000000001000;
+
+        // YELLOW+GREEN
+        lights = 0b0000000001001000;
         wait_us(1000000);
-        lights = 0b0000000001000000;
+
+        // RED + GREEN
+        lights = 0b0000000001000100;
         wait_us(1000000);                
     }
 }
