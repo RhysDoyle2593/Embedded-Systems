@@ -41,30 +41,33 @@ int main()
 
         //Update display
         disp = count;
-        
-        //Wait for button A
-        while (buttonA == 0) {
-        } 
+    
+        //Wait for button press
+            if (buttonA == 1) 
+            {
+                if (count > 0 ) 
+                {
+                    count -= 1;
+                }
+            }
 
-        if (count > 0 ) {
-            count -= 1;
-        }
+            //Wait for button B
+            if (buttonB == 1) 
+            {
+                if (count < 99 ) 
+                {
+                    count += 1;
+                }   
+            }
 
-        //Wait for button B
-        while (buttonB == 0) {
-        }
-
-        if (count < 99 ) {
-            count += 1;
-        } 
-
-        //Reset condition
-        if ((buttonA == 1) && (buttonB == 1)) {
-            count = 0;
-        }
+            //Reset condition
+            if ((buttonA == 1) && (buttonB == 1)) {
+                count = 0;
+            }
 
         // Slow it down a bit (and debounce the switches)
-        wait_us(250000);  
+        wait_us(250000); 
+         
     }
 }
 

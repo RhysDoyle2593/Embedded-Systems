@@ -52,44 +52,56 @@ int main()
         if (btnA_curr != btnA_prev) {
 
             //Was it a press?
-            if (btnA_curr == 1) {
+            if (btnA_curr == 1 && btnB_curr == 1)
+                {
+                    //Both pressed
+                    count = 0;
+                    //Update display
+                    disp = count;  
+                }
+            else if (btnA_curr == 1) {
                 //Button A was pressed!
                 if (count < 99) {
                     count+=1;
                 }
+                //Update display
+                disp = count; 
             }
+            
 
             // The previous value is now set to the current
             btnA_prev = btnA_curr;
 
-            //Update display
-            disp = count;            
+                       
         }
 
         // Did button B change?
         if (btnB_curr != btnB_prev) {
 
             //Was it a press?
-            if (btnB_curr == 1) {
+            if (btnA_curr == 1 && btnB_curr == 1)
+                {
+                    //Both pressed
+                    count = 0;
+                    //Update display
+                    disp = count;  
+                }
+            else if (btnB_curr == 1) {
                 //Button B was pressed!
                 if (count > 0) {
                     count-=1;
                 }
+                //Update display
+                disp = count; 
             }
             
             // The previous value is now set to the current
             btnB_prev = btnB_curr;
 
-            //Update display
-            disp = count;               
+                          
         }
         
         // Slow it down a bit (and debounce the switches)
         wait_us(250000);  
     }
 }
-
-
-
-
-
